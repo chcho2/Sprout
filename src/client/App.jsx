@@ -14,25 +14,27 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <SessionProvider>
-      <div id="app-container">
+
+   <SessionProvider>
+    <div id="app-container">
+      <Router>
         {isLoggedIn ? (
-          <Router>
-            <Switch>
-              <Route exact path="/" component={Dashboard} />
-              <Route exact path="/plant/:plantId" component={PlantProfile} />
-              {/* <Route exact path='/search' component={} /> */}
-              <Route exact path="/camera" component={NewPost} />
-              {/* <Route exact path='/message' component={} /> */}
-              <Route exact path="/profile" component={UserProfile} />
-              <Route path="*" render={() => <h1>404 - Page Not Found</h1>} />
-            </Switch>
-          </Router>
+          <Switch>
+            <Route exact path="/" component={Dashboard} />
+            <Route exact path="/plant/:plantId" component={PlantProfile} />
+            {/* <Route exact path='/search' component={} /> */}
+            <Route exact path="/camera" component={NewPost} />
+            {/* <Route exact path='/message' component={} /> */}
+            <Route exact path="/profile" component={UserProfile} />
+            <Route path="*" render={() => <h1>404 - Page Not Found</h1>} />
+          </Switch>
         ) : (
           <Login />
         )}
-      </div>
-    </SessionProvider>
+      </Router>
+    </div>
+   </SessionProvider>
+
   );
 };
 
