@@ -6,6 +6,7 @@ CREATE TABLE users (
   "first_name" varchar,
   "last_name" varchar,
   "password" varchar NOT NULL,
+  "profile_pic" varchar,
   UNIQUE ("email", "_id"),
   PRIMARY KEY ("_id")
 ) WITH (
