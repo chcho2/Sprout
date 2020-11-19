@@ -54,8 +54,6 @@ const LoginContainer = ({ setIsLoggedIn }) => {
           setFirstname('');
           setLastname('');
           setEmail('');
-          setPassword('');
-          // data {_id, email, first_name, last_name}
           setCurrentUser(data);
           alert('Sign up successful!');
           setIsLoggedIn(true);
